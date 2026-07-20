@@ -1,1 +1,10 @@
-export default function NotFound() { return <main className="grid min-h-screen place-items-center p-8"><div><h1 className="text-2xl font-medium">Page not found</h1><a className="mt-4 inline-block underline" href="/mandarin">Mandarin Word of the Day</a></div></main>; }
+export default function NotFound() {
+  return (
+    <main className="not-found">
+      <div>
+        <h1>Page not found</h1>
+        <a href="/mandarin">Mandarin Word of the Day</a>
+      </div>
+    </main>
+  );
+}
