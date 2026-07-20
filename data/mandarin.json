@@ -1,0 +1,282 @@
+[
+  {
+    "id": "mandarin-1",
+    "simplified": "学习",
+    "traditional": "學習",
+    "pinyin": "xuéxí",
+    "english": "to study; to learn",
+    "levels": [
+      "1"
+    ],
+    "frequency": 1,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-2",
+    "simplified": "你好",
+    "traditional": "你好",
+    "pinyin": "nǐ hǎo",
+    "english": "hello",
+    "levels": [
+      "1"
+    ],
+    "frequency": 2,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-3",
+    "simplified": "谢谢",
+    "traditional": "謝謝",
+    "pinyin": "xièxie",
+    "english": "thanks; thank you",
+    "levels": [
+      "1"
+    ],
+    "frequency": 3,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-4",
+    "simplified": "再见",
+    "traditional": "再見",
+    "pinyin": "zàijiàn",
+    "english": "goodbye",
+    "levels": [
+      "1"
+    ],
+    "frequency": 4,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-5",
+    "simplified": "中国",
+    "traditional": "中國",
+    "pinyin": "Zhōngguó",
+    "english": "China",
+    "levels": [
+      "1"
+    ],
+    "frequency": 5,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-6",
+    "simplified": "朋友",
+    "traditional": "朋友",
+    "pinyin": "péngyou",
+    "english": "friend",
+    "levels": [
+      "1"
+    ],
+    "frequency": 6,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-7",
+    "simplified": "老师",
+    "traditional": "老師",
+    "pinyin": "lǎoshī",
+    "english": "teacher",
+    "levels": [
+      "1"
+    ],
+    "frequency": 7,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-8",
+    "simplified": "学生",
+    "traditional": "學生",
+    "pinyin": "xuésheng",
+    "english": "student",
+    "levels": [
+      "1"
+    ],
+    "frequency": 8,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-9",
+    "simplified": "工作",
+    "traditional": "工作",
+    "pinyin": "gōngzuò",
+    "english": "work; job",
+    "levels": [
+      "1"
+    ],
+    "frequency": 9,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-10",
+    "simplified": "家",
+    "traditional": "家",
+    "pinyin": "jiā",
+    "english": "home; family",
+    "levels": [
+      "1"
+    ],
+    "frequency": 10,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-11",
+    "simplified": "水",
+    "traditional": "水",
+    "pinyin": "shuǐ",
+    "english": "water",
+    "levels": [
+      "1"
+    ],
+    "frequency": 11,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-12",
+    "simplified": "书",
+    "traditional": "書",
+    "pinyin": "shū",
+    "english": "book",
+    "levels": [
+      "1"
+    ],
+    "frequency": 12,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-13",
+    "simplified": "吃",
+    "traditional": "吃",
+    "pinyin": "chī",
+    "english": "to eat",
+    "levels": [
+      "1"
+    ],
+    "frequency": 13,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-14",
+    "simplified": "喝",
+    "traditional": "喝",
+    "pinyin": "hē",
+    "english": "to drink",
+    "levels": [
+      "1"
+    ],
+    "frequency": 14,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-15",
+    "simplified": "说",
+    "traditional": "說",
+    "pinyin": "shuō",
+    "english": "to speak; to say",
+    "levels": [
+      "1"
+    ],
+    "frequency": 15,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-16",
+    "simplified": "看",
+    "traditional": "看",
+    "pinyin": "kàn",
+    "english": "to look; to see",
+    "levels": [
+      "1"
+    ],
+    "frequency": 16,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-17",
+    "simplified": "听",
+    "traditional": "聽",
+    "pinyin": "tīng",
+    "english": "to listen",
+    "levels": [
+      "1"
+    ],
+    "frequency": 17,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-18",
+    "simplified": "喜欢",
+    "traditional": "喜歡",
+    "pinyin": "xǐhuan",
+    "english": "to like",
+    "levels": [
+      "1"
+    ],
+    "frequency": 18,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-19",
+    "simplified": "今天",
+    "traditional": "今天",
+    "pinyin": "jīntiān",
+    "english": "today",
+    "levels": [
+      "1"
+    ],
+    "frequency": 19,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  },
+  {
+    "id": "mandarin-20",
+    "simplified": "明天",
+    "traditional": "明天",
+    "pinyin": "míngtiān",
+    "english": "tomorrow",
+    "levels": [
+      "1"
+    ],
+    "frequency": 20,
+    "partsOfSpeech": [
+      "verb"
+    ]
+  }
+]
