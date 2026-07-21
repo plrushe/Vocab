@@ -1,0 +1,182 @@
+[
+  {
+    "id": "russian-1",
+    "cyrillic": "школа",
+    "transliteration": "shkola",
+    "english": "school",
+    "levels": ["A1"],
+    "frequency": 1,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "russian-2",
+    "cyrillic": "друг",
+    "transliteration": "drug",
+    "english": "friend",
+    "levels": ["A1"],
+    "frequency": 2,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "russian-3",
+    "cyrillic": "спасибо",
+    "transliteration": "spasibo",
+    "english": "thank you",
+    "levels": ["A1"],
+    "frequency": 3,
+    "partsOfSpeech": ["interjection"]
+  },
+  {
+    "id": "russian-4",
+    "cyrillic": "здравствуйте",
+    "transliteration": "zdravstvuyte",
+    "english": "hello",
+    "levels": ["A1"],
+    "frequency": 4,
+    "partsOfSpeech": ["interjection"]
+  },
+  {
+    "id": "russian-5",
+    "cyrillic": "вода",
+    "transliteration": "voda",
+    "english": "water",
+    "levels": ["A1"],
+    "frequency": 5,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "russian-6",
+    "cyrillic": "есть",
+    "transliteration": "yest'",
+    "english": "to eat",
+    "levels": ["A1"],
+    "frequency": 6,
+    "partsOfSpeech": ["verb"]
+  },
+  {
+    "id": "russian-7",
+    "cyrillic": "пить",
+    "transliteration": "pit'",
+    "english": "to drink",
+    "levels": ["A1"],
+    "frequency": 7,
+    "partsOfSpeech": ["verb"]
+  },
+  {
+    "id": "russian-8",
+    "cyrillic": "большой",
+    "transliteration": "bol'shoy",
+    "english": "big",
+    "levels": ["A1"],
+    "frequency": 8,
+    "partsOfSpeech": ["adjective"]
+  },
+  {
+    "id": "russian-9",
+    "cyrillic": "маленький",
+    "transliteration": "malen'kiy",
+    "english": "small",
+    "levels": ["A1"],
+    "frequency": 9,
+    "partsOfSpeech": ["adjective"]
+  },
+  {
+    "id": "russian-10",
+    "cyrillic": "сегодня",
+    "transliteration": "segodnya",
+    "english": "today",
+    "levels": ["A1"],
+    "frequency": 10,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "russian-11",
+    "cyrillic": "завтра",
+    "transliteration": "zavtra",
+    "english": "tomorrow",
+    "levels": ["A1"],
+    "frequency": 11,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "russian-12",
+    "cyrillic": "вчера",
+    "transliteration": "vchera",
+    "english": "yesterday",
+    "levels": ["A1"],
+    "frequency": 12,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "russian-13",
+    "cyrillic": "дом",
+    "transliteration": "dom",
+    "english": "house; home",
+    "levels": ["A1"],
+    "frequency": 13,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "russian-14",
+    "cyrillic": "кошка",
+    "transliteration": "koshka",
+    "english": "cat",
+    "levels": ["A1"],
+    "frequency": 14,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "russian-15",
+    "cyrillic": "собака",
+    "transliteration": "sobaka",
+    "english": "dog",
+    "levels": ["A1"],
+    "frequency": 15,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "russian-16",
+    "cyrillic": "книга",
+    "transliteration": "kniga",
+    "english": "book",
+    "levels": ["A1"],
+    "frequency": 16,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "russian-17",
+    "cyrillic": "нравиться",
+    "transliteration": "nravit'sya",
+    "english": "to like",
+    "levels": ["A1"],
+    "frequency": 17,
+    "partsOfSpeech": ["verb"]
+  },
+  {
+    "id": "russian-18",
+    "cyrillic": "время",
+    "transliteration": "vremya",
+    "english": "time",
+    "levels": ["A1"],
+    "frequency": 18,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "russian-19",
+    "cyrillic": "работа",
+    "transliteration": "rabota",
+    "english": "work; job",
+    "levels": ["A1"],
+    "frequency": 19,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "russian-20",
+    "cyrillic": "учёба",
+    "transliteration": "uchyoba",
+    "english": "study",
+    "levels": ["A1"],
+    "frequency": 20,
+    "partsOfSpeech": ["noun"]
+  }
+]
