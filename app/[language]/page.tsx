@@ -1,41 +1,43 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getWordForDate } from "@/lib/daily-word";
-import { isSupportedLanguage } from "@/lib/languages";
-import { getMandarinWords } from "@/lib/mandarin";
+import { isSupportedLanguage, languages } from "@/lib/languages";
+import { getWordOfTheDay } from "@/lib/word-of-the-day";
+import { LanguageMenu } from "./LanguageMenu";
 
-export const metadata: Metadata = {
-  title: "Mandarin Word of the Day",
-  description: "Learn one useful Mandarin Chinese word every day, with Hanzi, pinyin and its English meaning.",
-  alternates: { canonical: "/mandarin" },
-  openGraph: {
-    title: "Mandarin Word of the Day",
-    description: "Learn one useful Mandarin Chinese word every day, with Hanzi, pinyin and its English meaning.",
-  },
-  robots: { index: true, follow: true },
-};
+export async function generateMetadata({ params }: { params: Promise<{ language: string }> }): Promise<Metadata> {
+  const { language } = await params;
+  if (!isSupportedLanguage(language)) return {};
+
+  const { displayName } = languages[language];
+  const title = `${displayName} Word of the Day`;
+  const description = `Learn one useful ${displayName} word every day, with its script, pronunciation and English meaning.`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: `/${language}` },
+    openGraph: { title, description },
+    robots: { index: true, follow: true },
+  };
+}
 
 export default async function LanguagePage({ params }: { params: Promise<{ language: string }> }) {
   const { language } = await params;
   if (!isSupportedLanguage(language)) notFound();
 
-  const word = getWordForDate(new Date(), getMandarinWords());
+  const config = languages[language];
+  const word = getWordOfTheDay(language, new Date());
 
   return (
     <main className="word-page">
       <header className="word-page__header">
         <p>Word of the Day</p>
-        <p className="word-page__language" aria-label="Selected language: Mandarin">
-          Mandarin
-          <svg aria-hidden="true" viewBox="0 0 16 16">
-            <path d="m4 6 4 4 4-4" />
-          </svg>
-        </p>
+        <LanguageMenu current={language} />
       </header>
       <section className="word-page__content" aria-labelledby="word">
         <div>
-          <h1 id="word" className="hanzi word-page__hanzi" lang="zh-Hans">{word.simplified}</h1>
-          <p className="word-page__pinyin" lang="zh-Latn-pinyin">{word.pinyin}</p>
+          <h1 id="word" className={`word-page__hanzi ${config.scriptFontClass}`} lang={config.scriptLang}>{word.script}</h1>
+          <p className="word-page__pinyin" lang={config.pronunciationLang}>{word.pronunciation}</p>
           <p className="word-page__english">{word.english}</p>
         </div>
       </section>

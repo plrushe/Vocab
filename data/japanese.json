@@ -1,0 +1,202 @@
+[
+  {
+    "id": "japanese-1",
+    "kanji": "学校",
+    "hiragana": "がっこう",
+    "romaji": "gakkou",
+    "english": "school",
+    "levels": ["N5"],
+    "frequency": 1,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "japanese-2",
+    "kanji": "友達",
+    "hiragana": "ともだち",
+    "romaji": "tomodachi",
+    "english": "friend",
+    "levels": ["N5"],
+    "frequency": 2,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "japanese-3",
+    "kanji": "ありがとう",
+    "hiragana": "ありがとう",
+    "romaji": "arigatou",
+    "english": "thank you",
+    "levels": ["N5"],
+    "frequency": 3,
+    "partsOfSpeech": ["interjection"]
+  },
+  {
+    "id": "japanese-4",
+    "kanji": "こんにちは",
+    "hiragana": "こんにちは",
+    "romaji": "konnichiwa",
+    "english": "hello",
+    "levels": ["N5"],
+    "frequency": 4,
+    "partsOfSpeech": ["interjection"]
+  },
+  {
+    "id": "japanese-5",
+    "kanji": "水",
+    "hiragana": "みず",
+    "romaji": "mizu",
+    "english": "water",
+    "levels": ["N5"],
+    "frequency": 5,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "japanese-6",
+    "kanji": "食べる",
+    "hiragana": "たべる",
+    "romaji": "taberu",
+    "english": "to eat",
+    "levels": ["N5"],
+    "frequency": 6,
+    "partsOfSpeech": ["verb"]
+  },
+  {
+    "id": "japanese-7",
+    "kanji": "飲む",
+    "hiragana": "のむ",
+    "romaji": "nomu",
+    "english": "to drink",
+    "levels": ["N5"],
+    "frequency": 7,
+    "partsOfSpeech": ["verb"]
+  },
+  {
+    "id": "japanese-8",
+    "kanji": "大きい",
+    "hiragana": "おおきい",
+    "romaji": "ookii",
+    "english": "big",
+    "levels": ["N5"],
+    "frequency": 8,
+    "partsOfSpeech": ["adjective"]
+  },
+  {
+    "id": "japanese-9",
+    "kanji": "小さい",
+    "hiragana": "ちいさい",
+    "romaji": "chiisai",
+    "english": "small",
+    "levels": ["N5"],
+    "frequency": 9,
+    "partsOfSpeech": ["adjective"]
+  },
+  {
+    "id": "japanese-10",
+    "kanji": "今日",
+    "hiragana": "きょう",
+    "romaji": "kyou",
+    "english": "today",
+    "levels": ["N5"],
+    "frequency": 10,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "japanese-11",
+    "kanji": "明日",
+    "hiragana": "あした",
+    "romaji": "ashita",
+    "english": "tomorrow",
+    "levels": ["N5"],
+    "frequency": 11,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "japanese-12",
+    "kanji": "昨日",
+    "hiragana": "きのう",
+    "romaji": "kinou",
+    "english": "yesterday",
+    "levels": ["N5"],
+    "frequency": 12,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "japanese-13",
+    "kanji": "家",
+    "hiragana": "いえ",
+    "romaji": "ie",
+    "english": "house; home",
+    "levels": ["N5"],
+    "frequency": 13,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "japanese-14",
+    "kanji": "猫",
+    "hiragana": "ねこ",
+    "romaji": "neko",
+    "english": "cat",
+    "levels": ["N5"],
+    "frequency": 14,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "japanese-15",
+    "kanji": "犬",
+    "hiragana": "いぬ",
+    "romaji": "inu",
+    "english": "dog",
+    "levels": ["N5"],
+    "frequency": 15,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "japanese-16",
+    "kanji": "本",
+    "hiragana": "ほん",
+    "romaji": "hon",
+    "english": "book",
+    "levels": ["N5"],
+    "frequency": 16,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "japanese-17",
+    "kanji": "好き",
+    "hiragana": "すき",
+    "romaji": "suki",
+    "english": "likable; to like",
+    "levels": ["N5"],
+    "frequency": 17,
+    "partsOfSpeech": ["adjective"]
+  },
+  {
+    "id": "japanese-18",
+    "kanji": "時間",
+    "hiragana": "じかん",
+    "romaji": "jikan",
+    "english": "time",
+    "levels": ["N5"],
+    "frequency": 18,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "japanese-19",
+    "kanji": "仕事",
+    "hiragana": "しごと",
+    "romaji": "shigoto",
+    "english": "work; job",
+    "levels": ["N5"],
+    "frequency": 19,
+    "partsOfSpeech": ["noun"]
+  },
+  {
+    "id": "japanese-20",
+    "kanji": "勉強",
+    "hiragana": "べんきょう",
+    "romaji": "benkyou",
+    "english": "study",
+    "levels": ["N5"],
+    "frequency": 20,
+    "partsOfSpeech": ["noun", "verb"]
+  }
+]
