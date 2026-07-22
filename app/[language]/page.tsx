@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { isSupportedLanguage, languages } from "@/lib/languages";
 import { getWordOfTheDay } from "@/lib/word-of-the-day";
 import { LanguageMenu } from "./LanguageMenu";
+import { WordGuess } from "./WordGuess";
 
 export async function generateMetadata({ params }: { params: Promise<{ language: string }> }): Promise<Metadata> {
   const { language } = await params;
@@ -37,8 +38,7 @@ export default async function LanguagePage({ params }: { params: Promise<{ langu
       <section className="word-page__content" aria-labelledby="word">
         <div>
           <h1 id="word" className={`word-page__hanzi ${config.scriptFontClass}`} lang={config.scriptLang}>{word.script}</h1>
-          <p className="word-page__pinyin" lang={config.pronunciationLang}>{word.pronunciation}</p>
-          <p className="word-page__english">{word.english}</p>
+          <WordGuess word={word} pronunciationLang={config.pronunciationLang} />
         </div>
       </section>
     </main>
