@@ -274,7 +274,12 @@ html.is-keyboard-compact .word-page {
   position: fixed;
   inset: 0;
   height: var(--vvh, 100dvh);
-  overflow-y: auto;
+  padding-top: 48px;
+  /* clip, not auto/hidden: any scrollable overflow box (even overflow:
+     hidden) can still be nudged by the browser's own focus scroll-into-view,
+     which was shifting the hanzi/header up within this box even though the
+     box itself stayed pinned. clip disables scrolling outright. */
+  overflow: clip;
   background: #fff;
   z-index: 10;
 }
