@@ -10,19 +10,19 @@ export interface DisplayWord { script: string; pronunciation: string; english: s
 export function getWordOfTheDay(language: SupportedLanguage, date: Date): DisplayWord {
   switch (language) {
     case "mandarin": {
-      const word = getWordForDate(date, getMandarinWords());
+      const word = getWordForDate(date, getMandarinWords(), language);
       return { script: word.simplified, pronunciation: word.pinyin, english: word.english };
     }
     case "japanese": {
-      const word = getWordForDate(date, getJapaneseWords());
+      const word = getWordForDate(date, getJapaneseWords(), language);
       return { script: word.kanji, pronunciation: word.romaji, english: word.english };
     }
     case "korean": {
-      const word = getWordForDate(date, getKoreanWords());
+      const word = getWordForDate(date, getKoreanWords(), language);
       return { script: word.hangul, pronunciation: word.romanization, english: word.english };
     }
     case "russian": {
-      const word = getWordForDate(date, getRussianWords());
+      const word = getWordForDate(date, getRussianWords(), language);
       return { script: word.cyrillic, pronunciation: word.transliteration, english: word.english };
     }
   }
