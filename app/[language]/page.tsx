@@ -39,7 +39,7 @@ export default async function LanguagePage({ params }: { params: Promise<{ langu
         <LanguageMenu current={language} />
       </header>
       <section className="word-page__content" aria-labelledby="word">
-        <div>
+        <div className="word-page__stack">
           <h1 id="word" className={`word-page__hanzi ${config.scriptFontClass}`} lang={config.scriptLang}>{word.script}</h1>
           <WordGuess word={word} pronunciationLang={config.pronunciationLang} language={language} dateKey={dateKey} />
         </div>

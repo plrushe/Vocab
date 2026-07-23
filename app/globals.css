@@ -263,6 +263,12 @@ a:focus-visible { outline: 2px solid #000; outline-offset: 4px; }
  * on-screen keyboard opens — measuring the real visible height is the only
  * reliable signal. Only ever toggles on when the visible height is
  * keyboard-sized, so desktop is never affected.
+ *
+ * Layout: the hanzi anchors the top, and .word-page__guess (pinyin + the
+ * answer box) becomes its own column with space-between, so the pinyin sits
+ * just under the hanzi while the input/button are pinned to the very bottom
+ * of the visible area — right above the keyboard — instead of trailing
+ * whichever content happens to be shortest.
  */
 html.is-keyboard-compact .word-page {
   padding-top: 12px;
@@ -272,23 +278,42 @@ html.is-keyboard-compact .word-page__header {
   display: none;
 }
 html.is-keyboard-compact .word-page__content {
+  height: var(--vvh, 100dvh);
   min-height: var(--vvh, 100dvh);
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: center;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding: 0;
+}
+html.is-keyboard-compact .word-page__stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 0;
+  padding: 12px 24px;
 }
 html.is-keyboard-compact .word-page__hanzi {
+  flex: 0 0 auto;
   font-size: clamp(2rem, 12vw, 3rem);
 }
+html.is-keyboard-compact .word-page__guess {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 0;
+}
 html.is-keyboard-compact .word-page__pinyin {
-  margin-top: 12px;
+  margin: 12px 0 0;
+  flex: 0 0 auto;
 }
 html.is-keyboard-compact .word-page__english {
-  margin-top: 16px;
+  margin: 0;
 }
 html.is-keyboard-compact .word-page__guess-form {
-  margin-top: 16px;
+  margin: 0;
   gap: 8px;
 }
 html.is-keyboard-compact .word-page__guess-label {

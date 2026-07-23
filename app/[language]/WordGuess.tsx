@@ -122,8 +122,14 @@ export function WordGuess({
     if (!viewport) return;
 
     const update = () => {
+      const compact = viewport.height < 560;
       document.documentElement.style.setProperty("--vvh", `${viewport.height}px`);
-      document.documentElement.classList.toggle("is-keyboard-compact", viewport.height < 560);
+      document.documentElement.classList.toggle("is-keyboard-compact", compact);
+      // Some browsers scroll the whole page to bring the focused input above
+      // the keyboard before this listener runs, using the pre-compact layout
+      // — which shoves the hanzi off-screen. Once compact styles guarantee
+      // everything fits without scrolling, cancel that scroll out.
+      if (compact) window.scrollTo(0, 0);
     };
 
     update();
