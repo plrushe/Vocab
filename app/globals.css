@@ -244,7 +244,16 @@ a:focus-visible { outline: 2px solid #000; outline-offset: 4px; }
 @media (max-width: 640px) {
   .word-page { padding: 36px 24px; }
   .word-page__header { font-size: 18px; }
-  .word-page__content { min-height: calc(100vh - 108px); }
+  .word-page__content {
+    min-height: calc(100dvh - 108px);
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 24px;
+  }
+  .word-page__hanzi { font-size: clamp(3.5rem, 18vw, 5.5rem); }
+  .word-page__pinyin { margin-top: 28px; }
+  .word-page__english { margin-top: 32px; }
+  .word-page__guess-form { margin-top: 32px; }
 }
 .not-found { display: grid; min-height: 100vh; place-items: center; padding: 2rem; }
 .not-found h1 { font-size: 1.5rem; font-weight: 500; }
