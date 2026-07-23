@@ -114,9 +114,12 @@ export function WordGuess({
 
   // Keeps the word (and the answer box) above the on-screen keyboard: some
   // mobile browsers don't shrink layout viewport units (dvh) or honour the
-  // interactive-widget viewport meta when the keyboard opens, so track the
-  // real visible height via the VisualViewport API instead and switch to a
-  // compact layout whenever it gets keyboard-sized.
+  // interactive-widget viewport meta when the keyboard opens, and auto-scroll
+  // the page to bring the focused input into view — scrolling the hanzi off
+  // the top in the process. Track the real visible height via the
+  // VisualViewport API and toggle a class (see .is-keyboard-compact in
+  // globals.css, which pins the page with position: fixed) whenever it gets
+  // keyboard-sized.
   useEffect(() => {
     const viewport = window.visualViewport;
     if (!viewport) return;
@@ -125,10 +128,6 @@ export function WordGuess({
       const compact = viewport.height < 560;
       document.documentElement.style.setProperty("--vvh", `${viewport.height}px`);
       document.documentElement.classList.toggle("is-keyboard-compact", compact);
-      // Some browsers scroll the whole page to bring the focused input above
-      // the keyboard before this listener runs, using the pre-compact layout
-      // — which shoves the hanzi off-screen. Once compact styles guarantee
-      // everything fits without scrolling, cancel that scroll out.
       if (compact) window.scrollTo(0, 0);
     };
 

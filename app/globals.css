@@ -257,67 +257,26 @@ a:focus-visible { outline: 2px solid #000; outline-offset: 4px; }
 }
 
 /*
- * Applied via JS (see WordGuess.tsx) from the VisualViewport API rather than
- * a width media query or dvh, because some mobile browsers (notably in-app
- * WebViews) don't shrink dvh/vh or honour interactive-widget when the
- * on-screen keyboard opens — measuring the real visible height is the only
- * reliable signal. Only ever toggles on when the visible height is
- * keyboard-sized, so desktop is never affected.
- *
- * Layout: the hanzi anchors the top, and .word-page__guess (pinyin + the
- * answer box) becomes its own column with space-between, so the pinyin sits
- * just under the hanzi while the input/button are pinned to the very bottom
- * of the visible area — right above the keyboard — instead of trailing
- * whichever content happens to be shortest.
+ * Applied via JS (see WordGuess.tsx) from the VisualViewport API, because
+ * some mobile browsers (notably in-app WebViews) auto-scroll the page to
+ * bring the focused input above the keyboard, scrolling the hanzi off the
+ * top before any height-shrinking CSS can react. position: fixed sidesteps
+ * that entirely — a fixed element's on-screen position is defined relative
+ * to the viewport, not the document's scroll offset, so no matter what the
+ * browser scrolls to, the word stays pinned to the top of the visible area.
+ * Only ever toggles on when the visible height is keyboard-sized, so
+ * desktop is never affected.
  */
-html.is-keyboard-compact .word-page {
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-html.is-keyboard-compact .word-page__header {
+html.is-keyboard-compact .site-footer {
   display: none;
 }
-html.is-keyboard-compact .word-page__content {
+html.is-keyboard-compact .word-page {
+  position: fixed;
+  inset: 0;
   height: var(--vvh, 100dvh);
-  min-height: var(--vvh, 100dvh);
-  align-items: stretch;
-  justify-content: center;
-  padding: 0;
-}
-html.is-keyboard-compact .word-page__stack {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  min-height: 0;
-  padding: 12px 24px;
-}
-html.is-keyboard-compact .word-page__hanzi {
-  flex: 0 0 auto;
-  font-size: clamp(2rem, 12vw, 3rem);
-}
-html.is-keyboard-compact .word-page__guess {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  min-height: 0;
-}
-html.is-keyboard-compact .word-page__pinyin {
-  margin: 12px 0 0;
-  flex: 0 0 auto;
-}
-html.is-keyboard-compact .word-page__english {
-  margin: 0;
-}
-html.is-keyboard-compact .word-page__guess-form {
-  margin: 0;
-  gap: 8px;
-}
-html.is-keyboard-compact .word-page__guess-label {
-  font-size: 1rem;
+  overflow-y: auto;
+  background: #fff;
+  z-index: 10;
 }
 
 .not-found { display: grid; min-height: 100vh; place-items: center; padding: 2rem; }
