@@ -21,6 +21,30 @@ function acceptedAnswers(english: string): string[] {
 }
 
 type Stage = "guessing" | "hint" | "revealed" | "correct";
+type CompletedStage = Extract<Stage, "correct" | "revealed">;
+
+const STORAGE_PREFIX = "wotd-guess";
+
+function storageKey(language: string, dateKey: string): string {
+  return `${STORAGE_PREFIX}:${language}:${dateKey}`;
+}
+
+function readStoredStage(language: string, dateKey: string): CompletedStage | null {
+  try {
+    const raw = window.localStorage.getItem(storageKey(language, dateKey));
+    return raw === "correct" || raw === "revealed" ? raw : null;
+  } catch {
+    return null;
+  }
+}
+
+function writeStoredStage(language: string, dateKey: string, stage: CompletedStage): void {
+  try {
+    window.localStorage.setItem(storageKey(language, dateKey), stage);
+  } catch {
+    // localStorage unavailable (private browsing, disabled storage, etc.) — completion just won't persist.
+  }
+}
 
 const CONFETTI_COLORS = ["#16a34a", "#22c55e", "#4ade80", "#065f46", "#86efac"];
 
@@ -61,9 +85,13 @@ function Confetti() {
 export function WordGuess({
   word,
   pronunciationLang,
+  language,
+  dateKey,
 }: {
   word: DisplayWord;
   pronunciationLang: string;
+  language: string;
+  dateKey: string;
 }) {
   const [stage, setStage] = useState<Stage>("guessing");
   const [guess, setGuess] = useState("");
@@ -73,18 +101,28 @@ export function WordGuess({
   const showPronunciation = stage !== "guessing";
 
   useEffect(() => {
-    if (stage !== "correct") return;
-    setShowConfetti(true);
+    const stored = readStoredStage(language, dateKey);
+    if (stored) setStage(stored);
+  }, [language, dateKey]);
+
+  useEffect(() => {
+    if (!showConfetti) return;
     const timeout = setTimeout(() => setShowConfetti(false), 1600);
     return () => clearTimeout(timeout);
-  }, [stage]);
+  }, [showConfetti]);
+
+  function complete(stage: CompletedStage) {
+    setStage(stage);
+    writeStoredStage(language, dateKey, stage);
+    if (stage === "correct") setShowConfetti(true);
+  }
 
   function submitGuess() {
     const trimmed = guess.trim();
     if (!trimmed) return;
 
     if (acceptedAnswers(word.english).includes(normalize(trimmed))) {
-      setStage("correct");
+      complete("correct");
       return;
     }
 
@@ -92,7 +130,7 @@ export function WordGuess({
       setStage("hint");
       setGuess("");
     } else {
-      setStage("revealed");
+      complete("revealed");
     }
   }
 
