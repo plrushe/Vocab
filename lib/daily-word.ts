@@ -6,3 +6,6 @@ export function getWordForDate<T>(date: Date, words: T[]): T {
   const days = Math.floor((utcStart(date) - WORD_EPOCH_UTC) / 86_400_000);
   return words[((days % words.length) + words.length) % words.length];
 }
+export function getDateKey(date: Date): string {
+  return new Date(utcStart(date)).toISOString().slice(0, 10);
+}

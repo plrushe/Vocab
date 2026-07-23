@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isSupportedLanguage, languages } from "@/lib/languages";
 import { getWordOfTheDay } from "@/lib/word-of-the-day";
+import { getDateKey } from "@/lib/daily-word";
 import { LanguageMenu } from "./LanguageMenu";
 import { WordGuess } from "./WordGuess";
 
@@ -27,7 +28,9 @@ export default async function LanguagePage({ params }: { params: Promise<{ langu
   if (!isSupportedLanguage(language)) notFound();
 
   const config = languages[language];
-  const word = getWordOfTheDay(language, new Date());
+  const now = new Date();
+  const word = getWordOfTheDay(language, now);
+  const dateKey = getDateKey(now);
 
   return (
     <main className="word-page">
@@ -38,7 +41,7 @@ export default async function LanguagePage({ params }: { params: Promise<{ langu
       <section className="word-page__content" aria-labelledby="word">
         <div>
           <h1 id="word" className={`word-page__hanzi ${config.scriptFontClass}`} lang={config.scriptLang}>{word.script}</h1>
-          <WordGuess word={word} pronunciationLang={config.pronunciationLang} />
+          <WordGuess word={word} pronunciationLang={config.pronunciationLang} language={language} dateKey={dateKey} />
         </div>
       </section>
     </main>
