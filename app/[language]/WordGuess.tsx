@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useMemo, useState, type CSSProperties } from "react";
+import { useEffect, useId, useMemo, useRef, useState, type CSSProperties } from "react";
 import type { DisplayWord } from "@/lib/word-of-the-day";
 
 type ConfettiStyle = CSSProperties & { "--confetti-rotate": string; "--confetti-drift": string };
@@ -97,6 +97,7 @@ export function WordGuess({
   const [guess, setGuess] = useState("");
   const [showConfetti, setShowConfetti] = useState(false);
   const inputId = useId();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const showPronunciation = stage !== "guessing";
 
@@ -110,6 +111,31 @@ export function WordGuess({
     const timeout = setTimeout(() => setShowConfetti(false), 1600);
     return () => clearTimeout(timeout);
   }, [showConfetti]);
+
+  // Keeps the word (and the answer box) above the on-screen keyboard: some
+  // mobile browsers don't shrink layout viewport units (dvh) or honour the
+  // interactive-widget viewport meta when the keyboard opens, so track the
+  // real visible height via the VisualViewport API instead and switch to a
+  // compact layout whenever it gets keyboard-sized.
+  useEffect(() => {
+    const viewport = window.visualViewport;
+    if (!viewport) return;
+
+    const update = () => {
+      document.documentElement.style.setProperty("--vvh", `${viewport.height}px`);
+      document.documentElement.classList.toggle("is-keyboard-compact", viewport.height < 560);
+    };
+
+    update();
+    viewport.addEventListener("resize", update);
+    viewport.addEventListener("scroll", update);
+    return () => {
+      viewport.removeEventListener("resize", update);
+      viewport.removeEventListener("scroll", update);
+      document.documentElement.classList.remove("is-keyboard-compact");
+      document.documentElement.style.removeProperty("--vvh");
+    };
+  }, []);
 
   function complete(stage: CompletedStage) {
     setStage(stage);
@@ -129,6 +155,9 @@ export function WordGuess({
     if (stage === "guessing") {
       setStage("hint");
       setGuess("");
+      // The button steals focus on tap, which dismisses the keyboard — bring
+      // it straight back so the user can type their second guess immediately.
+      inputRef.current?.focus();
     } else {
       complete("revealed");
     }
@@ -168,6 +197,7 @@ export function WordGuess({
           </label>
           <input
             id={inputId}
+            ref={inputRef}
             className="word-page__guess-input"
             type="text"
             value={guess}

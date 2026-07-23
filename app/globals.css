@@ -255,6 +255,46 @@ a:focus-visible { outline: 2px solid #000; outline-offset: 4px; }
   .word-page__english { margin-top: 32px; }
   .word-page__guess-form { margin-top: 32px; }
 }
+
+/*
+ * Applied via JS (see WordGuess.tsx) from the VisualViewport API rather than
+ * a width media query or dvh, because some mobile browsers (notably in-app
+ * WebViews) don't shrink dvh/vh or honour interactive-widget when the
+ * on-screen keyboard opens — measuring the real visible height is the only
+ * reliable signal. Only ever toggles on when the visible height is
+ * keyboard-sized, so desktop is never affected.
+ */
+html.is-keyboard-compact .word-page {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+html.is-keyboard-compact .word-page__header {
+  display: none;
+}
+html.is-keyboard-compact .word-page__content {
+  min-height: var(--vvh, 100dvh);
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+html.is-keyboard-compact .word-page__hanzi {
+  font-size: clamp(2rem, 12vw, 3rem);
+}
+html.is-keyboard-compact .word-page__pinyin {
+  margin-top: 12px;
+}
+html.is-keyboard-compact .word-page__english {
+  margin-top: 16px;
+}
+html.is-keyboard-compact .word-page__guess-form {
+  margin-top: 16px;
+  gap: 8px;
+}
+html.is-keyboard-compact .word-page__guess-label {
+  font-size: 1rem;
+}
+
 .not-found { display: grid; min-height: 100vh; place-items: center; padding: 2rem; }
 .not-found h1 { font-size: 1.5rem; font-weight: 500; }
 .not-found a { display: inline-block; margin-top: 1rem; }
